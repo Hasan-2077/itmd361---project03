@@ -291,9 +291,39 @@ a:hover {
   }
 }
 
+/* Additional adjustments for small screen sizes */
 @media (max-width: 768px) {
-  .image-container img {
-    width: 100%;
+  .nav-top {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-top li {
+    margin: 0.5rem 0;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: 90%;
+    white-space: normal;
+  }
+
+  .content-container, .additional-info {
+    padding: 1rem;
+  }
+
+  .image-container {
+    flex-direction: column;
+  }
+
+  .album-info {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .video-title {
+    font-size: 1.6rem;
   }
 }
 
@@ -306,12 +336,6 @@ a:hover {
   margin: 1.5rem auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .album-info {
-    flex-wrap: wrap;
-  }
 }
 
 .album-item {
