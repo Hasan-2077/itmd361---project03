@@ -163,20 +163,6 @@ a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 1000px) {
-  .nav-top {
-    flex-direction: row;
-  }
-
-  .nav-top li {
-    margin: 1.5rem 0;
-  }
-
-  section {
-    padding: 1rem;
-  }
-}
-
 .content-section p {
   margin: 2rem auto;
 }
@@ -258,6 +244,58 @@ a:hover {
   border-radius: 0.5rem;
 }
 
+/* First min-width media query for small mobile devices */
+@media (min-width: 375px) {
+  .banner-title {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+
+  .image-container img {
+    width: 48%;
+  }
+
+  .album-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .album-item img {
+    width: 50px;
+  }
+
+  .video-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Second min-width media query for larger mobile devices */
+@media (min-width: 600px) {
+  .banner-title {
+    font-size: 2.2rem;
+  }
+
+  .image-container img {
+    width: 45%;
+  }
+
+  .content-container,
+  .additional-info {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .album-info {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .image-container img {
     width: 100%;
@@ -279,7 +317,6 @@ a:hover {
   .album-info {
     flex-wrap: wrap;
   }
-
 }
 
 .album-item {
