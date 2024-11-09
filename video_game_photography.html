@@ -6,7 +6,7 @@
   <title>In Game Photography</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="video-game-photography">
 
   <div class="banner">
     <img src="images/banner.jpg" alt="Banner Image">
@@ -20,14 +20,16 @@
     <h1 class="cyberpunk-font-og banner-title">In Game Photography</h1>
   </div>
 
+  <!-- Image Slider Section -->
   <section class="content-section">
-
-    <div class="image-container">
-      <img src="images/photo1.jpg" alt="High-res in-game shot of modded car showcasing dynamic lighting and weather effects in Cyberpunk_2077.">
-      <img src="images/photo2.jpg" alt="High-res in-game photo of modded car capturing detailed textures and depth of field effects in Cyberpunk_2077.">
-      <img src="images/truck.jpg" alt="High-res in-game photo of a truck with reflections and neon lights.">
-      <img src="images/street.jpg" alt="High-res in-game photo of a street scene capturing dynamic lighting in Cyberpunk_2077.">
-      <img src="images/r1.jpg" alt="High-res in-game photo of a bike showcasing futuristic design in Cyberpunk_2077.">
+    <div id="slider" class="slider-container">
+      <div class="slides">
+        <img src="images/photo1.jpg" alt="High-res in-game shot of modded car showcasing dynamic lighting and weather effects in Cyberpunk_2077.">
+        <img src="images/photo2.jpg" alt="High-res in-game photo of modded car capturing detailed textures and depth of field effects in Cyberpunk_2077.">
+        <img src="images/truck.jpg" alt="High-res in-game photo of a truck with reflections and neon lights.">
+        <img src="images/street.jpg" alt="High-res in-game photo of a street scene capturing dynamic lighting in Cyberpunk_2077.">
+        <img src="images/r1.jpg" alt="High-res in-game photo of a bike showcasing futuristic design in Cyberpunk_2077.">
+      </div>
     </div>
 
     <div class="content-container">
@@ -36,7 +38,6 @@
       <p class="light-blue-text">Otis_inf tool is basically a photo-mode injection tool which runs while the game is running in order to work together.</p>
       <p class="light-blue-text">Besides the injection tool, I also have to use an app called Reshade where I can manipulate in-game assets such as image sharpening, light settings, field of view, lens aperture, and long exposure units.</p>
     </div>
-
   </section>
 
   <section class="content-section">
@@ -100,5 +101,7 @@
 
   </section> 
 
+  <!-- JavaScript for Slider -->
+  <script src="js/slider.js"></script>
 </body>
 </html>
