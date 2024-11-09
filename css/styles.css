@@ -1,4 +1,4 @@
-@font-face {  
+@font-face {   
   font-family: 'Cyberpunk';
   src: url('../fonts/Cyberpunk.otf') format('opentype');
 }
@@ -381,23 +381,34 @@ a:hover {
   .album-item audio {
     width: 100%;
   }
-
-  /* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  .banner {
-    padding-top: 20px; /* Ensures space for the navigation */
-  }
-
-  .banner-title {
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    width: 90%;
-    white-space: normal; /* Allow line break */
-    text-align: center;
-    top: 60%; /* Adjust vertical position */
-    transform: translate(-50%, -60%); /* Centers with new top position */
-  }
-}
 }
 
+/* Slider-specific styles */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 300px; /* Adjust height to fit your images */
+  background-color: #000;
+  margin: 20px 0;
+}
 
+.slides {
+  display: flex;
+  animation: slideLeft 60s linear infinite; /* Slow continuous sliding */
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+}
+
+/* Keyframes for sliding from right to left */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
