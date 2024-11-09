@@ -381,4 +381,23 @@ a:hover {
   .album-item audio {
     width: 100%;
   }
+
+  /* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .banner {
+    padding-top: 20px; /* Ensures space for the navigation */
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: 90%;
+    white-space: normal; /* Allow line break */
+    text-align: center;
+    top: 60%; /* Adjust vertical position */
+    transform: translate(-50%, -60%); /* Centers with new top position */
+  }
 }
+}
+
+
