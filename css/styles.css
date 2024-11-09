@@ -389,17 +389,17 @@ a:hover {
   overflow: hidden;
   position: relative;
   height: 300px; /* Adjust height to fit your images */
-  background-color: #000;
   margin: 20px 0;
 }
 
 .slides {
   display: flex;
   animation: slideLeft 60s linear infinite; /* Slow continuous sliding */
+  gap: 10px; /* Space between images */
 }
 
 .slides img {
-  width: 100%;
+  width: auto; /* Keep original image size */
   height: auto;
 }
 
