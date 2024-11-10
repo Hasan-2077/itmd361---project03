@@ -393,14 +393,16 @@ a:hover {
 }
 
 .slides {
-  display: flex;
-  animation: slideLeft 60s linear infinite; /* Slow continuous sliding */
-  gap: 10px; /* Space between images */
+  display: inline-flex;
+  animation: slideLeft s linear infinite; /* Slow continuous sliding */
+  gap: 15px; /* Space between images */
 }
 
 .slides img {
-  width: auto; /* Keep original image size */
-  height: auto;
+  width: auto;
+  height: 250px; /* Set a fixed height to fit within container */
+  object-fit: cover; /* Ensures the image covers the set height */
+  border-radius: 5px; /* Optional: round the edges of the images */
 }
 
 /* Keyframes for sliding from right to left */
@@ -409,6 +411,6 @@ a:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
