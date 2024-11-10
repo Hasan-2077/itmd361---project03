@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set initial variables
   let currentPosition = 0;
-  const scrollSpeed = 0.5; // Adjust speed as needed
+  const scrollSpeed = 1; // Adjust speed as needed
 
   // Function to animate slider
   function animateSlider() {
       currentPosition -= scrollSpeed;
-      
+
       // Reset to start for seamless looping
       if (Math.abs(currentPosition) >= slidesContainer.scrollWidth / 2) {
           currentPosition = 0;
