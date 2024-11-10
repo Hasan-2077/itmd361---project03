@@ -61,18 +61,39 @@ body.resume-background {
   font-weight: bold;
 }
 
+/* Only apply Cyberpunk font to titles */
 .banner-title {
+  font-family: 'Cyberpunk', sans-serif;
+  letter-spacing: 0.1em;
+  color: #feef00;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #feef00;
-  font-family: 'Cyberpunk', sans-serif;
-  letter-spacing: 0.1em;
-  text-align: center;
   z-index: 2;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
   white-space: nowrap;
+}
+
+.main-title {
+  font-family: 'Cyberpunk', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  color: #feef00;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+}
+
+.video-title {
+  font-size: 1.8rem;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  color: #feef00;
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+  text-decoration: underline;
 }
 
 .main-content-center {
@@ -136,33 +157,8 @@ a:hover {
   color: #0056b3;
 }
 
-.cyberpunk-font,
-.cyberpunk-font-og {
-  font-family: 'Cyberpunk' !important;
-  text-transform: uppercase;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  color: #feef00;
-  text-shadow: #46dffb 1px 1px, #45aefb 2px 2px;
-}
-
 .checkmark {
   color: rgb(0, 75, 12);
-}
-
-.main-title {
-  font-style: italic;
-  color: black;
-}
-
-.video-title {
-  font-family: 'Arial', sans-serif;
-  font-size: 1.8rem;
-  text-align: center;
-  color: #feef00;
-  margin-bottom: 10px;
-  display: block;
-  width: 100%;
-  text-decoration: underline;
 }
 
 .content-section p {
@@ -174,6 +170,8 @@ a:hover {
 }
 
 .video-container iframe {
+  width: 560px; /* Original dimensions for larger screens */
+  height: 315px;
   display: block;
   margin: 0 auto;
 }
@@ -222,52 +220,62 @@ a:hover {
   border-radius: 0.5rem;
 }
 
-/* First min-width media query for small mobile devices */
-@media (min-width: 375px) {
-  .banner-title {
-    font-size: 2rem;
-    padding: 0.5rem;
-  }
+/* Responsive Adjustments */
 
-  .album-info {
-    gap: 10px;
+/* Compact Navigation for Small Screens */
+@media (max-width: 480px) {
+  .nav-top li {
+    margin: 0 0.5rem;
   }
-
-  .album-item img {
-    width: 50px;
+  .nav-top li a {
+    padding: 0.3rem 0.8rem;
   }
+}
 
-  .video-title {
-    font-size: 1.5rem;
-  }
-
+/* Reduced Padding for Content Sections */
+@media (max-width: 600px) {
   .content-container, .additional-info {
-    padding: 1.5rem;
-  }
-}
-
-/* Second min-width media query for larger mobile devices */
-@media (min-width: 600px) {
-  .banner-title {
-    font-size: 2.2rem;
-  }
-
-  .content-container,
-  .additional-info {
     padding: 1rem;
-    max-width: 90%;
-  }
-
-  .album-info {
-    gap: 15px;
-  }
-
-  .video-title {
-    font-size: 1.7rem;
+    max-width: 95%;
   }
 }
 
-/* Additional adjustments for small screen sizes */
+/* Flexible Album Layout */
+@media (max-width: 600px) {
+  .album-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .album-item img {
+    width: 100%;
+    max-width: 100px;
+  }
+}
+
+/* Proportional Image Scaling */
+@media (max-width: 768px) {
+  .image-container img {
+    width: 45%;
+  }
+  .slides img, .album-item img {
+    width: 100%;
+  }
+}
+
+/* Responsive Image Slider */
+@media (max-width: 600px) {
+  .slider-container {
+    height: auto;
+    max-height: 200px;
+  }
+  .slides img {
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Adjustments for Small Screens */
 @media (max-width: 768px) {
   .nav-top {
     padding: 5px 0;
@@ -310,10 +318,6 @@ a:hover {
 
   .album-item img {
     width: 100%;
-  }
-
-  .video-title {
-    font-size: 1.6rem;
   }
 }
 
