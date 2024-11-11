@@ -1,4 +1,4 @@
-@font-face {   
+@font-face {    
   font-family: 'Cyberpunk';
   src: url('../fonts/Cyberpunk.otf') format('opentype');
   font-display: swap;
@@ -14,6 +14,8 @@ body {
   background-size: cover;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh;
+  width: 100vw;
 }
 
 body.resume-background {
@@ -24,12 +26,12 @@ body.resume-background {
 .banner {
   position: relative;
   width: 100%;
-  height: auto;
+  height: auto; /* Keeps banner image at original size */
 }
 
 .banner img {
   width: 100%;
-  height: auto;
+  height: auto; /* Keeps banner image at original size */
 }
 
 .nav-top {
@@ -42,7 +44,7 @@ body.resume-background {
   padding: 10px 0;
   list-style: none;
   background-color: rgba(255, 251, 0, 0.5);
-  flex-wrap: wrap; /* Enable wrapping on smaller screens */
+  flex-wrap: wrap;
 }
 
 .nav-top li {
@@ -61,7 +63,6 @@ body.resume-background {
   font-weight: bold;
 }
 
-/* Only apply Cyberpunk font to titles */
 .banner-title {
   font-family: 'Cyberpunk', sans-serif;
   letter-spacing: 0.1em;
@@ -170,7 +171,8 @@ a:hover {
 }
 
 .video-container iframe {
-  width: 560px; /* Original dimensions for larger screens */
+  width: 100%;
+  max-width: 560px;
   height: 315px;
   display: block;
   margin: 0 auto;
@@ -190,39 +192,59 @@ a:hover {
   align-items: center;
   gap: 20px;
   margin-top: 20px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  flex-direction: column; /* Change to column on smaller screens */
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .album-item {
-  text-align: center;
-  flex: 1;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .album-item img {
-  width: clamp(50px, 10vw, 75px); /* Responsive width adjustment */
+  width: 100px;
   height: auto;
+  margin-bottom: 10px;
   border-radius: 8px;
+}
+
+.album-item p {
+  font-size: 1rem;
+  color: rgb(142, 0, 185);
+  margin: 5px 0;
+  text-align: center;
+}
+
+.audio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
   margin-top: 10px;
 }
 
-.image-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: nowrap;
-  margin-bottom: 20px;
+.audio-wrapper .audio-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #9d00db;
+  text-align: center;
 }
 
-.image-container img {
-  width: 32%;
-  border-radius: 0.5rem;
+.album-item audio {
+  width: 100%;
+  min-width: 250px;
+  margin-top: 10px;
 }
 
-/* Responsive Adjustments */
-
-/* Compact Navigation for Small Screens */
 @media (max-width: 480px) {
   .nav-top li {
     margin: 0 0.5rem;
@@ -232,7 +254,6 @@ a:hover {
   }
 }
 
-/* Reduced Padding for Content Sections */
 @media (max-width: 600px) {
   .content-container, .additional-info {
     padding: 1rem;
@@ -240,7 +261,6 @@ a:hover {
   }
 }
 
-/* Flexible Album Layout */
 @media (max-width: 600px) {
   .album-item {
     width: 100%;
@@ -252,7 +272,6 @@ a:hover {
   }
 }
 
-/* Proportional Image Scaling */
 @media (max-width: 768px) {
   .image-container img {
     width: 45%;
@@ -262,7 +281,6 @@ a:hover {
   }
 }
 
-/* Responsive Image Slider */
 @media (max-width: 600px) {
   .slider-container {
     height: auto;
@@ -275,7 +293,6 @@ a:hover {
   }
 }
 
-/* Adjustments for Small Screens */
 @media (max-width: 768px) {
   .nav-top {
     padding: 5px 0;
@@ -304,7 +321,7 @@ a:hover {
   }
 
   .image-container img {
-    width: 48%; /* Ensures images are proportionally large on smaller screens */
+    width: 48%;
   }
 
   .album-info {
@@ -313,7 +330,7 @@ a:hover {
   }
 
   .album-item {
-    width: 45%; /* Maintains horizontal layout */
+    width: 45%;
   }
 
   .album-item img {
@@ -332,54 +349,36 @@ a:hover {
   padding-right: 1.5rem;
 }
 
-.album-item audio {
-  margin-top: 10px;
-  width: auto;
-  min-width: 250px;
-
-}
-
-.audio-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.audio-title {
-  font-weight: bold;
-  font-size: 14px;
-  color: #9d00db;
-}
-
-@media (max-width: 768px) {
-  .album-item audio {
-    width: 100%;
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-/* Slider-specific styles */
 .slider-container {
   width: 100%;
   overflow: hidden;
   position: relative;
-  max-height: 300px; /* Adjust max-height for better responsiveness */
+  max-height: 300px;
   margin: 20px 0;
 }
 
 .slides {
   display: inline-flex;
-  animation: slideLeft s linear infinite; /* Slow continuous sliding */
-  gap: 15px; /* Space between images */
+  animation: slideLeft 30s linear infinite;
+  gap: 15px;
 }
 
 .slides img {
   width: auto;
-  height: 250px; /* Set a fixed height to fit within container */
-  object-fit: cover; /* Ensures the image covers the set height */
-  border-radius: 5px; /* Optional: round the edges of the images */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
 }
+
 
 /* Keyframes for sliding from right to left */
 @keyframes slideLeft {
