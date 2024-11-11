@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Maps - Extra Features</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -24,63 +25,57 @@
 </head>
 <body class="map">
 
-  <h1>Your Website's Google Map</h1>
-  <h3>Navigation Links</h3>
-  <nav>
-    <ul>
-      <li><a href="index.html">Homepage</a></li>
+  <div class="banner">
+    <img src="images/banner.jpg" alt="Banner Image">
+    
+    <ul class="nav-top">
+      <li><a href="index.html">Main</a></li>
       <li><a href="resume.html">Resume</a></li>
-      <li><a href="video_game_photography.html">Games</a></li>
-      <li><a href="googlemaps.html">Map</a></li>
+      <li><a href="video_game_photography.html">Video Game Photography</a></li>
+      <li><a href="googlemaps.html" class="active">Map</a></li>
     </ul>
-  </nav>
+
+    <h1 class="cyberpunk-font-og banner-title">Map</h1>
+  </div>
 
   <div id="map"></div>
 
-  <!-- Google Maps JavaScript API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvlezdn_3zUXWs4JD6dFSJUQYUVF937mM&callback=initMap" async defer></script>
   <script>
     let map;
 
     function initMap() {
-      // Initialize the map centered on Chicago, IL
       map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 41.85003, lng: -87.65005 },
         zoom: 12,
       });
 
-      // Feature 1: Add a marker
       const marker = new google.maps.Marker({
         position: { lat: 41.85003, lng: -87.65005 },
         map: map,
         title: "Chicago",
       });
 
-      // Feature 2: Add an info window (popup) to the marker
       const infoWindow = new google.maps.InfoWindow({
         content: "<h3>Chicago</h3><p>The Windy City!</p>",
       });
 
-      // Show info window on marker click
       marker.addListener("click", () => {
         infoWindow.open(map, marker);
       });
 
-      // Feature 3: Add a custom control button to center map on marker
       const centerControlDiv = document.createElement("div");
       const centerControl = createCenterControl(centerControlDiv, map, marker);
       map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
     }
 
     function createCenterControl(controlDiv, map, marker) {
-      // Create a button element for the custom control
       const controlUI = document.createElement("div");
       controlUI.classList.add("custom-control");
       controlUI.title = "Click to center the map on the marker";
       controlUI.innerText = "Center Map on Marker";
       controlDiv.appendChild(controlUI);
 
-      // Set up the click event listener to recenter the map
       controlUI.addEventListener("click", () => {
         map.setCenter(marker.getPosition());
         map.setZoom(12);
@@ -91,3 +86,7 @@
   </script>
 </body>
 </html>
+
+
+
+
