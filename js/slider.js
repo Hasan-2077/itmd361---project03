@@ -14,11 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollSpeed = 0.90; // Adjust speed as needed
     let resetPosition = slidesContainer.scrollWidth / 2;
   
-    // Function to update reset position based on screen size
-    function updateResetPosition() {
-      resetPosition = slidesContainer.scrollWidth / 2;
-    }
-  
     // Function to animate slider
     function animateSlider() {
       currentPosition -= scrollSpeed;
