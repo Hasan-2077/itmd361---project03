@@ -282,6 +282,12 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .banner-title {
+    top: 60%; /* Shift the title slightly lower on small screens */
+  }
+}
+
+@media (max-width: 600px) {
   .slider-container {
     height: auto;
     max-height: 200px;
@@ -380,12 +386,3 @@ a:hover {
 }
 
 
-/* Keyframes for sliding from right to left */
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
