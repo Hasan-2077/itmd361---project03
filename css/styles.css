@@ -337,3 +337,26 @@ a:hover {
   object-fit: cover;
   border-radius: 5px;
 }
+
+/* Spacing for map container to push it below the title */
+.map-container {
+  margin-top: 150px; /* Adjust as needed for spacing */
+}
+
+/* Map styling */
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+/* Custom control button styling for Google Maps */
+.custom-control {
+  background-color: white;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
