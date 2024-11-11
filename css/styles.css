@@ -245,102 +245,55 @@ a:hover {
   margin-top: 10px;
 }
 
-@media (max-width: 480px) {
-  .nav-top li {
-    margin: 0 0.5rem;
-  }
-  .nav-top li a {
-    padding: 0.3rem 0.8rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .content-container, .additional-info {
-    padding: 1rem;
-    max-width: 95%;
-  }
-}
-
-@media (max-width: 600px) {
-  .album-item {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .album-item img {
-    width: 100%;
-    max-width: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .image-container img {
-    width: 45%;
-  }
-  .slides img, .album-item img {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .banner-title {
-    top: 60%; /* Shift the title slightly lower on small screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .slider-container {
-    height: auto;
-    max-height: 200px;
-  }
-  .slides img {
-    height: auto;
-    max-width: 100%;
-    aspect-ratio: 16/9;
-  }
-}
-
-@media (max-width: 768px) {
+/* First min-width media query at 768px */
+@media (min-width: 768px) {
   .nav-top {
-    padding: 5px 0;
-    font-size: 0.9rem;
-  }
-
-  .nav-top li {
-    margin: 0.5rem 1rem;
+    padding: 15px 0;
+    font-size: 1.1rem;
   }
 
   .banner-title {
-    font-size: 1.8rem;
-    padding: 0.5rem;
-    width: 90%;
-    white-space: normal;
+    font-size: 2rem;
+    padding: 1rem;
+    width: 80%;
   }
 
   .content-container, .additional-info {
-    padding: 1rem;
-  }
-
-  .image-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    padding: 2rem 3rem;
   }
 
   .image-container img {
-    width: 48%;
+    width: 40%;
+  }
+
+  .album-item {
+    width: 40%;
+  }
+}
+
+/* Second min-width media query at 1024px */
+@media (min-width: 1024px) {
+  .main-title {
+    text-align: center;
+    font-size: 2.5rem;
   }
 
   .album-info {
-    gap: 10px;
-    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-around;
   }
 
-  .album-item {
-    width: 45%;
+  .main-content-center {
+    max-width: 900px;
   }
 
-  .album-item img {
-    width: 100%;
+  .video-title {
+    font-size: 2rem;
+  }
+
+  .audio-wrapper {
+    padding: 1rem;
   }
 }
 
@@ -384,5 +337,3 @@ a:hover {
   object-fit: cover;
   border-radius: 5px;
 }
-
-
