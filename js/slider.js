@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set initial variables
   let currentPosition = 0;
-  const scrollSpeed = 1; // Adjust speed as needed
+  const scrollSpeed = 0.4; // Adjust speed as needed
 
   // Function to animate slider
   function animateSlider() {
