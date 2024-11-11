@@ -3,37 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const slidesContainer = document.querySelector('.slides');
     const images = Array.from(slidesContainer.children);
   
-    // Clone images and append to create a seamless loop
+    // Clone images twice to ensure seamless looping
     images.forEach((image) => {
-      const clone = image.cloneNode(true);
-      slidesContainer.appendChild(clone);
+        const clone1 = image.cloneNode(true);
+        const clone2 = image.cloneNode(true);
+        slidesContainer.appendChild(clone1);
+        slidesContainer.appendChild(clone2);
     });
-  
-    // Set initial variables
+
+    // Initial variables
     let currentPosition = 0;
-    const scrollSpeed = 0.90; // Adjust speed as needed
-    let resetPosition = slidesContainer.scrollWidth / 2;
-  
-    // Function to animate slider
+    const scrollSpeed = 0.9; // Adjust speed as needed
+
+    // Function to animate slider continuously
     function animateSlider() {
-      currentPosition -= scrollSpeed;
-  
-      // Reset to start for seamless looping
-      if (Math.abs(currentPosition) >= resetPosition) {
-        currentPosition = 0;
-      }
-  
-      slidesContainer.style.transform = `translateX(${currentPosition}px)`;
-      requestAnimationFrame(animateSlider);
+        currentPosition -= scrollSpeed;
+
+        // Reset position smoothly when halfway through the cloned slides
+        if (Math.abs(currentPosition) >= slidesContainer.scrollWidth / 3) {
+            currentPosition = 0;
+        }
+
+        slidesContainer.style.transform = `translateX(${currentPosition}px)`;
+        requestAnimationFrame(animateSlider);
     }
-  
-    // Update reset position on resize for small screens
-    window.addEventListener('resize', () => {
-      updateResetPosition();
-    });
-  
-    // Initialize and start animation
-    updateResetPosition();
+
+    // Start the animation
     animateSlider();
-  });
-  
+});
