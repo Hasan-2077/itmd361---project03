@@ -1,31 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const sliderContainer = document.querySelector('.slider-container');
-  const slidesContainer = document.querySelector('.slides');
-  const images = Array.from(slidesContainer.children);
-
-  // Clone images and append to create a seamless loop
-  images.forEach((image) => {
+    const sliderContainer = document.querySelector('.slider-container');
+    const slidesContainer = document.querySelector('.slides');
+    const images = Array.from(slidesContainer.children);
+  
+    // Clone images and append to create a seamless loop
+    images.forEach((image) => {
       const clone = image.cloneNode(true);
       slidesContainer.appendChild(clone);
-  });
-
-  // Set initial variables
-  let currentPosition = 0;
-  const scrollSpeed = 0.85; // Adjust speed as needed
-
-  // Function to animate slider
-  function animateSlider() {
+    });
+  
+    // Set initial variables
+    let currentPosition = 0;
+    const scrollSpeed = 0.90; // Adjust speed as needed
+    let resetPosition = slidesContainer.scrollWidth / 2;
+  
+    // Function to update reset position based on screen size
+    function updateResetPosition() {
+      resetPosition = slidesContainer.scrollWidth / 2;
+    }
+  
+    // Function to animate slider
+    function animateSlider() {
       currentPosition -= scrollSpeed;
-
+  
       // Reset to start for seamless looping
-      if (Math.abs(currentPosition) >= slidesContainer.scrollWidth / 2) {
-          currentPosition = 0;
+      if (Math.abs(currentPosition) >= resetPosition) {
+        currentPosition = 0;
       }
-
+  
       slidesContainer.style.transform = `translateX(${currentPosition}px)`;
       requestAnimationFrame(animateSlider);
-  }
-
-  // Start animation
-  animateSlider();
-});
+    }
+  
+    // Update reset position on resize for small screens
+    window.addEventListener('resize', () => {
+      updateResetPosition();
+    });
+  
+    // Initialize and start animation
+    updateResetPosition();
+    animateSlider();
+  });
+  
