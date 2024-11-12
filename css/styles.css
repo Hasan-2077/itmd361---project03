@@ -326,9 +326,8 @@ a:hover {
 }
 
 .slides {
-  display: inline-flex;
-  animation: slideLeft 30s linear infinite;
-  gap: 15px;
+  display: flex;
+  gap: 5px;
 }
 
 .slides img {
