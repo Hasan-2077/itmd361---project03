@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slidesContainer = document.querySelector('.slides');
+
+    // Check if the element exists before proceeding
+    if (!slidesContainer) {
+        console.error('Error: No element found with class "slides".');
+        return;
+    }
+
     const images = Array.from(slidesContainer.children);
 
     // Clone all images once to create an infinite loop effect
@@ -14,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to animate slider continuously in a seamless loop
     function animateSlider() {
         currentPosition -= scrollSpeed;
-        
+
         if (Math.abs(currentPosition) >= slidesContainer.scrollWidth / 2) {
             currentPosition = 0;
         }
