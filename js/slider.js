@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slidesContainer = document.querySelector('.slides');
 
-    // Check if the element exists before proceeding
+    // Only run the slider code if the slidesContainer exists
     if (!slidesContainer) {
-        console.error('Error: No element found with class "slides".');
-        return;
+        return; // Exit if there's no .slides element on the page
     }
 
     const images = Array.from(slidesContainer.children);
