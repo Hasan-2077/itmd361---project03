@@ -117,12 +117,13 @@ body.resume-background {
 
 .content-container, .additional-info {
   background-color: rgba(255, 209, 208, 0.918);
-  padding: 2rem;
+  padding: 4rem;
   margin: 2rem auto;
   max-width: 80%;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: justify;
+  margin-top: 4rem;
 }
 
 .resume-container {
@@ -326,13 +327,13 @@ a:hover {
 }
 
 .slides {
-  display: flex;
+  display: inline-flex;
   gap: 5px;
 }
 
 .slides img {
-  width: auto;
-  height: 250px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
   border-radius: 5px;
 }
