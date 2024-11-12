@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let currentPosition = 0;
-    const scrollSpeed = 0.65; // Adjust speed as needed
+    const scrollSpeed = 0.65;
 
     // Function to animate slider continuously in a seamless loop
     function animateSlider() {
         currentPosition -= scrollSpeed;
-
-        // When reaching the end of the cloned images, reset position to continue seamless scroll
+        
         if (Math.abs(currentPosition) >= slidesContainer.scrollWidth / 2) {
             currentPosition = 0;
         }
@@ -24,6 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animateSlider);
     }
 
-    // Start the animation
     animateSlider();
 });
